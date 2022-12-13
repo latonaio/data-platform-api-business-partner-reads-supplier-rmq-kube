@@ -19,24 +19,60 @@ func (c *DPFMAPICaller) readSqlProcess(
 	log *logger.Logger,
 ) interface{} {
 	var supplier *dpfm_api_output_formatter.Supplier
+	var contact *dpfm_api_output_formatter.Contact
 	var partnerFunction *dpfm_api_output_formatter.PartnerFunction
+	var partnerFunctionContact *dpfm_api_output_formatter.PartnerFunctionContact
+	var partnerPlant *dpfm_api_output_formatter.PartnerPlant
+	var finInst *dpfm_api_output_formatter.FinInst
+	var accounting *dpfm_api_output_formatter.Accounting
+	var tax *dpfm_api_output_formatter.Tax
 	for _, fn := range accepter {
 		switch fn {
 		case "Supplier":
 			func() {
 				supplier = c.Supplier(mtx, input, output, errs, log)
 			}()
+		case "Contact":
+			func() {
+				contact = c.Contact(mtx, input, output, errs, log)
+			}()
 		case "PartnerFunction":
 			func() {
 				partnerFunction = c.PartnerFunction(mtx, input, output, errs, log)
+			}()
+		case "PartnerFunctionContact":
+			func() {
+				partnerFunctionContact = c.PartnerFunctionContact(mtx, input, output, errs, log)
+			}()
+		case "PartnerPlant":
+			func() {
+				partnerPlant = c.PartnerPlant(mtx, input, output, errs, log)
+			}()
+		case "FinInst":
+			func() {
+				finInst = c.FinInst(mtx, input, output, errs, log)
+			}()
+		case "Accounting":
+			func() {
+				accounting = c.Accounting(mtx, input, output, errs, log)
+			}()
+		case "Tax":
+			func() {
+				tax = c.Tax(mtx, input, output, errs, log)
 			}()
 		default:
 		}
 	}
 
 	data := &dpfm_api_output_formatter.Message{
-		Supplier:        supplier,
-		PartnerFunction: partnerFunction,
+		Supplier:               supplier,
+		Contact:                contact,
+		PartnerFunction:        partnerFunction,
+		PartnerFunctionContact: partnerFunctionContact,
+		PartnerPlant:           partnerPlant,
+		FinInst:                finInst,
+		Accounting:             accounting,
+		Tax:                    tax,
 	}
 
 	return data

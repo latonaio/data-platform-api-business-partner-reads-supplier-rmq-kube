@@ -70,13 +70,13 @@ type SDC struct {
 }
 
 type Supplier struct {
-	BusinessPartner               *int            `json:"BusinessPartner"`
-	Supplier                      *int            `json:"Supplier"`
-	Currency                      string          `json:"Currency"`
-	PaymentTerms                  string          `json:"PaymentTerms"`
-	PaymentMethod                 string          `json:"PaymentMethod"`
-	Incoterms                     string          `json:"Incoterms"`
-	BPAccountAssignmentGroup      string          `json:"BPAccountAssignmentGroup"`
+	BusinessPartner               int             `json:"BusinessPartner"`
+	Supplier                      int             `json:"Supplier"`
+	Currency                      *string         `json:"Currency"`
+	PaymentTerms                  *string         `json:"PaymentTerms"`
+	PaymentMethod                 *string         `json:"PaymentMethod"`
+	Incoterms                     *string         `json:"Incoterms"`
+	BPAccountAssignmentGroup      *string         `json:"BPAccountAssignmentGroup"`
 	InvoiceIsGoodsReceiptBased    *bool           `json:"InvoiceIsGoodsReceiptBased"`
 	PurOrdAutoGenerationIsAllowed *bool           `json:"PurOrdAutoGenerationIsAllowed"`
 	CreationDate                  *string         `json:"CreationDate"`
@@ -95,27 +95,27 @@ type Supplier struct {
 }
 
 type Contact struct {
-	BusinessPartner     *int   `json:"BusinessPartner"`
-	Supplier            *int   `json:"Supplier"`
-	ContactID           *int   `json:"ContactID"`
-	ContactPersonName   string `json:"ContactPersonName"`
-	EmailAddress        string `json:"EmailAddress"`
-	PhoneNumber         string `json:"PhoneNumber"`
-	MobilePhoneNumber   string `json:"MobilePhoneNumber"`
-	FaxNumber           string `json:"FaxNumber"`
-	ContactTag1         string `json:"ContactTag1"`
-	ContactTag2         string `json:"ContactTag2"`
-	ContactTag3         string `json:"ContactTag3"`
-	ContactTag4         string `json:"ContactTag4"`
-	DefaultContact      *bool  `json:"DefaultContact"`
-	IsMarkedForDeletion *bool  `json:"IsMarkedForDeletion"`
+	BusinessPartner     int     `json:"BusinessPartner"`
+	Supplier            int     `json:"Supplier"`
+	ContactID           int     `json:"ContactID"`
+	ContactPersonName   *string `json:"ContactPersonName"`
+	EmailAddress        *string `json:"EmailAddress"`
+	PhoneNumber         *string `json:"PhoneNumber"`
+	MobilePhoneNumber   *string `json:"MobilePhoneNumber"`
+	FaxNumber           *string `json:"FaxNumber"`
+	ContactTag1         *string `json:"ContactTag1"`
+	ContactTag2         *string `json:"ContactTag2"`
+	ContactTag3         *string `json:"ContactTag3"`
+	ContactTag4         *string `json:"ContactTag4"`
+	DefaultContact      *bool   `json:"DefaultContact"`
+	IsMarkedForDeletion *bool   `json:"IsMarkedForDeletion"`
 }
 
 type PartnerFunction struct {
-	BusinessPartner                *int                   `json:"BusinessPartner"`
-	Supplier                       *int                   `json:"Supplier"`
-	PartnerCounter                 *int                   `json:"PartnerCounter"`
-	PartnerFunction                string                 `json:"PartnerFunction"`
+	BusinessPartner                int                    `json:"BusinessPartner"`
+	Supplier                       int                    `json:"Supplier"`
+	PartnerCounter                 int                    `json:"PartnerCounter"`
+	PartnerFunction                *string                `json:"PartnerFunction"`
 	PartnerFunctionBusinessPartner *int                   `json:"PartnerFunctionBusinessPartner"`
 	DefaultPartner                 *bool                  `json:"DefaultPartner"`
 	CreationDate                   *string                `json:"CreationDate"`
@@ -125,71 +125,71 @@ type PartnerFunction struct {
 }
 
 type PartnerFunctionContact struct {
-	BusinessPartner                *int   `json:"BusinessPartner"`
-	Supplier                       *int   `json:"Supplier"`
-	PartnerCounter                 *int   `json:"PartnerCounter"`
-	ContactID                      *int   `json:"ContactID"`
-	PartnerFunction                string `json:"PartnerFunction"`
-	PartnerFunctionBusinessPartner *int   `json:"PartnerFunctionBusinessPartner"`
-	DefaultPartner                 *bool  `json:"DefaultPartner"`
-	ContactPersonName              string `json:"ContactPersonName"`
-	EmailAddress                   string `json:"EmailAddress"`
-	PhoneNumber                    string `json:"PhoneNumber"`
-	MobilePhoneNumber              string `json:"MobilePhoneNumber"`
-	FaxNumber                      string `json:"FaxNumber"`
-	ContactTag1                    string `json:"ContactTag1"`
-	ContactTag2                    string `json:"ContactTag2"`
-	ContactTag3                    string `json:"ContactTag3"`
-	ContactTag4                    string `json:"ContactTag4"`
-	DefaultContact                 *bool  `json:"DefaultContact"`
-	IsMarkedForDeletion            *bool  `json:"IsMarkedForDeletion"`
+	BusinessPartner                int     `json:"BusinessPartner"`
+	Supplier                       int     `json:"Supplier"`
+	PartnerCounter                 int     `json:"PartnerCounter"`
+	ContactID                      int     `json:"ContactID"`
+	PartnerFunction                *string `json:"PartnerFunction"`
+	PartnerFunctionBusinessPartner *int    `json:"PartnerFunctionBusinessPartner"`
+	DefaultPartner                 *bool   `json:"DefaultPartner"`
+	ContactPersonName              *string `json:"ContactPersonName"`
+	EmailAddress                   *string `json:"EmailAddress"`
+	PhoneNumber                    *string `json:"PhoneNumber"`
+	MobilePhoneNumber              *string `json:"MobilePhoneNumber"`
+	FaxNumber                      *string `json:"FaxNumber"`
+	ContactTag1                    *string `json:"ContactTag1"`
+	ContactTag2                    *string `json:"ContactTag2"`
+	ContactTag3                    *string `json:"ContactTag3"`
+	ContactTag4                    *string `json:"ContactTag4"`
+	DefaultContact                 *bool   `json:"DefaultContact"`
+	IsMarkedForDeletion            *bool   `json:"IsMarkedForDeletion"`
 }
 
 type PartnerPlant struct {
-	BusinessPartner                *int   `json:"BusinessPartner"`
-	Supplier                       *int   `json:"Supplier"`
-	PartnerCounter                 *int   `json:"PartnerCounter"`
-	PartnerFunction                string `json:"PartnerFunction"`
-	PartnerFunctionBusinessPartner *int   `json:"PartnerFunctionBusinessPartner"`
-	PlantCounter                   *int   `json:"PlantCounter"`
-	Plant                          string `json:"Plant"`
-	DefaultPlant                   *bool  `json:"DefaultPlant"`
-	DefaultStockConfirmationPlant  *bool  `json:"DefaultStockConfirmationPlant"`
-	IsMarkedForDeletion            *bool  `json:"IsMarkedForDeletion"`
+	BusinessPartner                int     `json:"BusinessPartner"`
+	Supplier                       int     `json:"Supplier"`
+	PartnerCounter                 int     `json:"PartnerCounter"`
+	PartnerFunction                string  `json:"PartnerFunction"`
+	PartnerFunctionBusinessPartner int     `json:"PartnerFunctionBusinessPartner"`
+	PlantCounter                   int     `json:"PlantCounter"`
+	Plant                          *string `json:"Plant"`
+	DefaultPlant                   *bool   `json:"DefaultPlant"`
+	DefaultStockConfirmationPlant  *bool   `json:"DefaultStockConfirmationPlant"`
+	IsMarkedForDeletion            *bool   `json:"IsMarkedForDeletion"`
 }
 
 type FinInst struct {
-	BusinessPartner           *int    `json:"BusinessPartner"`
-	Supplier                  *int    `json:"Supplier"`
-	FinInstIdentification     *int    `json:"FinInstIdentification"`
-	ValidityEndDate           *string `json:"ValidityEndDate"`
-	ValidityStartDate         *string `json:"ValidityStartDate"`
-	FinInstCountry            string  `json:"FinInstCountry"`
-	FinInstNumber             string  `json:"FinInstNumber"`
-	FinInstName               string  `json:"FinInstName"`
-	FinInstBranchName         string  `json:"FinInstBranchName"`
-	SWIFTCode                 string  `json:"SWIFTCode"`
+	BusinessPartner           int     `json:"BusinessPartner"`
+	Supplier                  int     `json:"Supplier"`
+	FinInstIdentification     int     `json:"FinInstIdentification"`
+	ValidityEndDate           string  `json:"ValidityEndDate"`
+	ValidityStartDate         string  `json:"ValidityStartDate"`
+	FinInstCountry            *string `json:"FinInstCountry"`
+	FinInstNumber             *string `json:"FinInstNumber"`
+	FinInstName               *string `json:"FinInstName"`
+	FinInstBranchName         *string `json:"FinInstBranchName"`
+	SWIFTCode                 *string `json:"SWIFTCode"`
 	InternalFinInstCustomerID *int    `json:"InternalFinInstCustomerID"`
 	InternalFinInstAccountID  *int    `json:"InternalFinInstAccountID"`
-	FinInstControlKey         string  `json:"FinInstControlKey"`
-	FinInstAccountName        string  `json:"FinInstAccountName"`
-	FinInstAccount            string  `json:"FinInstAccount"`
+	FinInstControlKey         *string `json:"FinInstControlKey"`
+	FinInstAccountName        *string `json:"FinInstAccountName"`
+	FinInstAccount            *string `json:"FinInstAccount"`
 	IsMarkedForDeletion       *bool   `json:"IsMarkedForDeletion"`
 }
 
 type Tax struct {
-	BusinessPartner     *int   `json:"BusinessPartner"`
-	Supplier            *int   `json:"Supplier"`
-	DepartureCountry    string `json:"DepartureCountry"`
-	TaxCategory         string `json:"TaxCategory"`
-	BPTaxClassification string `json:"BPTaxClassification"`
+	BusinessPartner     int     `json:"BusinessPartner"`
+	Supplier            int     `json:"Supplier"`
+	DepartureCountry    string  `json:"DepartureCountry"`
+	TaxCategory         *string `json:"TaxCategory"`
+	BPTaxClassification *string `json:"BPTaxClassification"`
 }
 
 type Accounting struct {
-	BusinessPartner       *int   `json:"BusinessPartner"`
-	Supplier              *int   `json:"Supplier"`
-	HouseBank             string `json:"HouseBank"`
-	ClearCustomerSupplier *bool  `json:"ClearCustomerSupplier"`
-	ReconciliationAccount string `json:"ReconciliationAccount"`
-	IsMarkedForDeletion   *bool  `json:"IsMarkedForDeletion"`
+	BusinessPartner       int     `json:"BusinessPartner"`
+	Supplier              int     `json:"Supplier"`
+	HouseBank             *string `json:"HouseBank"`
+	ClearCustomerSupplier *bool   `json:"ClearCustomerSupplier"`
+	ReconciliationAccount *string `json:"ReconciliationAccount"`
+	IsMarkedForDeletion   *bool   `json:"IsMarkedForDeletion"`
 }
